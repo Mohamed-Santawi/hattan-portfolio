@@ -81,7 +81,8 @@ const BlogPost = () => {
       category: "selfAwareness",
       published: true,
       featured: true,
-      image: "https://hattanarif.com/og-image.png",
+      image:
+        "https://hattan-portfolio.vercel.app/assets/Self_Awareness-KyA2IAyk.png",
       author: "هتان عارف",
       publishedAt: "2024-01-15T10:00:00Z",
       updatedAt: "2024-01-15T10:00:00Z",
@@ -97,7 +98,8 @@ const BlogPost = () => {
       category: "emotionalIntelligence",
       published: true,
       featured: false,
-      image: "https://hattanarif.com/og-image.png",
+      image:
+        "https://hattan-portfolio.vercel.app/assets/EmotionalIntellegent-PKwXjggm.png",
       author: "هتان عارف",
       publishedAt: "2024-01-10T10:00:00Z",
       updatedAt: "2024-01-10T10:00:00Z",
@@ -113,7 +115,8 @@ const BlogPost = () => {
       category: "lifeSkills",
       published: true,
       featured: false,
-      image: "https://hattanarif.com/og-image.png",
+      image:
+        "https://hattan-portfolio.vercel.app/assets/Leadership_Development-Bp44VmMw.png",
       author: "هتان عارف",
       publishedAt: "2024-01-05T10:00:00Z",
       updatedAt: "2024-01-05T10:00:00Z",

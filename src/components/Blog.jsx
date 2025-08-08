@@ -1,12 +1,18 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { FiSearch, FiCalendar, FiClock, FiArrowLeft, FiHome } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
-import Footer from './Footer';
-import SEO from './SEO';
-import { HattanLogoWhite } from '../assets';
-import { getPosts } from '../Services/api';
-import toast from 'react-hot-toast';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import {
+  FiSearch,
+  FiCalendar,
+  FiClock,
+  FiArrowLeft,
+  FiHome,
+} from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
+import SEO from "./SEO";
+import { HattanLogoWhite } from "../assets";
+import { getPosts } from "../Services/api";
+import toast from "react-hot-toast";
 
 // Blog-specific styles to override global font inheritance
 const blogStyles = `
@@ -38,12 +44,12 @@ const blogStyles = `
 
 const Blog = () => {
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   // Inject blog-specific styles
   useEffect(() => {
-    const styleElement = document.createElement('style');
+    const styleElement = document.createElement("style");
     styleElement.textContent = blogStyles;
     document.head.appendChild(styleElement);
 
@@ -61,13 +67,13 @@ const Blog = () => {
         const posts = await getPosts();
         if (posts.success) {
           const allPosts = posts.data;
-          setBlogPosts(allPosts.filter(post => post.published));
+          setBlogPosts(allPosts.filter((post) => post.published));
         } else {
           // Fallback to sample data if API fails
           setBlogPosts(sampleBlogPosts);
         }
       } catch (error) {
-        console.log('API failed, using sample data:', error);
+        console.log("API failed, using sample data:", error);
         // Fallback to sample data if API fails
         setBlogPosts(sampleBlogPosts);
       }
@@ -81,71 +87,81 @@ const Blog = () => {
     {
       id: "1",
       title: "كيفية تطوير الوعي الذاتي",
-      excerpt: "الوعي الذاتي هو الخطوة الأولى نحو النمو الشخصي والقيادة الفعالة. في هذا المقال، نستكشف الطرق العملية لتطوير الوعي الذاتي.",
-      content: "<p>الوعي الذاتي هو القدرة على فهم مشاعرنا وأفكارنا وسلوكياتنا بشكل واضح. إنه الأساس الذي نبني عليه النمو الشخصي والقيادة الفعالة.</p><p>في هذا المقال، سنستكشف الطرق العملية لتطوير الوعي الذاتي وكيف يمكن أن يساعدنا في حياتنا المهنية والشخصية.</p>",
+      excerpt:
+        "الوعي الذاتي هو الخطوة الأولى نحو النمو الشخصي والقيادة الفعالة. في هذا المقال، نستكشف الطرق العملية لتطوير الوعي الذاتي.",
+      content:
+        "<p>الوعي الذاتي هو القدرة على فهم مشاعرنا وأفكارنا وسلوكياتنا بشكل واضح. إنه الأساس الذي نبني عليه النمو الشخصي والقيادة الفعالة.</p><p>في هذا المقال، سنستكشف الطرق العملية لتطوير الوعي الذاتي وكيف يمكن أن يساعدنا في حياتنا المهنية والشخصية.</p>",
       category: "selfAwareness",
       published: true,
       featured: true,
-      image: "https://hattanarif.com/og-image.png",
+      image:
+        "https://hattan-portfolio.vercel.app/assets/Self_Awareness-KyA2IAyk.png",
       author: "هتان عارف",
       publishedAt: "2024-01-15T10:00:00Z",
       updatedAt: "2024-01-15T10:00:00Z",
-      readTime: 5
+      readTime: 5,
     },
     {
       id: "2",
       title: "الذكاء العاطفي في مكان العمل",
-      excerpt: "الذكاء العاطفي أصبح مهارة أساسية في عالم العمل الحديث. اكتشف كيف يمكن تطويره واستخدامه لتحسين الأداء المهني.",
-      content: "<p>الذكاء العاطفي هو القدرة على فهم وإدارة مشاعرنا ومشاعر الآخرين. في مكان العمل، يمكن أن يكون الفرق بين النجاح والفشل.</p><p>في هذا المقال، نستكشف أهمية الذكاء العاطفي وكيف يمكن تطويره لتحسين الأداء المهني.</p>",
+      excerpt:
+        "الذكاء العاطفي أصبح مهارة أساسية في عالم العمل الحديث. اكتشف كيف يمكن تطويره واستخدامه لتحسين الأداء المهني.",
+      content:
+        "<p>الذكاء العاطفي هو القدرة على فهم وإدارة مشاعرنا ومشاعر الآخرين. في مكان العمل، يمكن أن يكون الفرق بين النجاح والفشل.</p><p>في هذا المقال، نستكشف أهمية الذكاء العاطفي وكيف يمكن تطويره لتحسين الأداء المهني.</p>",
       category: "emotionalIntelligence",
       published: true,
       featured: false,
-      image: "https://hattanarif.com/og-image.png",
+      image:
+        "https://hattan-portfolio.vercel.app/assets/EmotionalIntellegent-PKwXjggm.png",
       author: "هتان عارف",
       publishedAt: "2024-01-10T10:00:00Z",
       updatedAt: "2024-01-10T10:00:00Z",
-      readTime: 4
+      readTime: 4,
     },
     {
       id: "3",
       title: "مهارات القيادة الفعالة",
-      excerpt: "القيادة الفعالة تتطلب أكثر من مجرد سلطة رسمية. اكتشف المهارات الأساسية التي تجعل منك قائداً فعالاً.",
-      content: "<p>القيادة الفعالة هي فن تحفيز وإلهام الآخرين لتحقيق أهداف مشتركة. إنها تتطلب مجموعة من المهارات والصفات الشخصية.</p><p>في هذا المقال، نستكشف المهارات الأساسية للقيادة الفعالة وكيف يمكن تطويرها.</p>",
+      excerpt:
+        "القيادة الفعالة تتطلب أكثر من مجرد سلطة رسمية. اكتشف المهارات الأساسية التي تجعل منك قائداً فعالاً.",
+      content:
+        "<p>القيادة الفعالة هي فن تحفيز وإلهام الآخرين لتحقيق أهداف مشتركة. إنها تتطلب مجموعة من المهارات والصفات الشخصية.</p><p>في هذا المقال، نستكشف المهارات الأساسية للقيادة الفعالة وكيف يمكن تطويرها.</p>",
       category: "lifeSkills",
       published: true,
       featured: false,
-      image: "https://hattanarif.com/og-image.png",
+      image:
+        "https://hattan-portfolio.vercel.app/assets/Leadership_Development-Bp44VmMw.png",
       author: "هتان عارف",
       publishedAt: "2024-01-05T10:00:00Z",
       updatedAt: "2024-01-05T10:00:00Z",
-      readTime: 6
-    }
+      readTime: 6,
+    },
   ];
 
   const categories = [
-    { key: 'all', label: 'جميع المقالات' },
-    { key: 'selfAwareness', label: 'الوعي الذاتي' },
-    { key: 'emotionalIntelligence', label: 'الذكاء العاطفي' },
-    { key: 'lifeSkills', label: 'مهارات حياتية' },
-    { key: 'bookAndIdea', label: 'كتاب وفكرة' },
-    { key: 'personalExperiences', label: 'تجارب شخصية' }
+    { key: "all", label: "جميع المقالات" },
+    { key: "selfAwareness", label: "الوعي الذاتي" },
+    { key: "emotionalIntelligence", label: "الذكاء العاطفي" },
+    { key: "lifeSkills", label: "مهارات حياتية" },
+    { key: "bookAndIdea", label: "كتاب وفكرة" },
+    { key: "personalExperiences", label: "تجارب شخصية" },
   ];
 
-  const filteredPosts = blogPosts.filter(post => {
+  const filteredPosts = blogPosts.filter((post) => {
     const matchesSearch =
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
 
-    const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
+    const matchesCategory =
+      selectedCategory === "all" || post.category === selectedCategory;
 
     return matchesSearch && matchesCategory;
   });
 
-  const featuredPosts = blogPosts.filter(post => post.featured);
+  const featuredPosts = blogPosts.filter((post) => post.featured);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('ar-SA');
+    return date.toLocaleDateString("ar-SA");
   };
 
   const BlogCard = ({ post, featured = false }) => (
@@ -154,43 +170,45 @@ const Blog = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 cursor-pointer ${
-        featured ? 'md:col-span-2 lg:col-span-1' : ''
+        featured ? "md:col-span-2 lg:col-span-1" : ""
       }`}
       dir="rtl"
       onClick={() => navigate(`/blog/${post.id}`)}
     >
       <div className="relative overflow-hidden">
-        {post.image && post.image.trim() !== '' ? (
+        {post.image && post.image.trim() !== "" ? (
           <img
             src={post.image}
             alt={post.title}
             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             onError={(e) => {
-              console.log('Image failed to load:', post.image);
-              e.target.style.display = 'none';
-              e.target.nextSibling.style.display = 'flex';
+              console.log("Image failed to load:", post.image);
+              e.target.style.display = "none";
+              e.target.nextSibling.style.display = "flex";
             }}
             onLoad={() => {
-              console.log('Image loaded successfully:', post.image);
+              console.log("Image loaded successfully:", post.image);
             }}
           />
         ) : null}
         <div
-          className={`w-full h-48 bg-gradient-to-br from-[#004f38] to-[#006b4f] flex items-center justify-center ${post.image && post.image.trim() !== '' ? 'hidden' : ''}`}
-          style={{ display: (post.image && post.image.trim() !== '') ? 'none' : 'flex' }}
+          className={`w-full h-48 bg-gradient-to-br from-[#004f38] to-[#006b4f] flex items-center justify-center ${
+            post.image && post.image.trim() !== "" ? "hidden" : ""
+          }`}
+          style={{
+            display: post.image && post.image.trim() !== "" ? "none" : "flex",
+          }}
         >
           <div className="text-white text-center p-6">
             <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-3 mx-auto">
-              <span className="text-2xl font-bold">
-                {post.title.charAt(0)}
-              </span>
+              <span className="text-2xl font-bold">{post.title.charAt(0)}</span>
             </div>
             <p className="text-sm opacity-90">صورة المقال</p>
           </div>
         </div>
         <div className="absolute top-4 right-4">
           <span className="bg-white/90 backdrop-blur-sm text-[#004f38] px-3 py-1 rounded-full text-sm font-medium shadow-sm">
-            {categories.find(cat => cat.key === post.category)?.label}
+            {categories.find((cat) => cat.key === post.category)?.label}
           </span>
         </div>
         {featured && (
@@ -203,7 +221,10 @@ const Blog = () => {
       </div>
 
       <div className="p-6">
-        <div className="flex items-center gap-4 text-sm text-gray-500 mb-4" dir="rtl">
+        <div
+          className="flex items-center gap-4 text-sm text-gray-500 mb-4"
+          dir="rtl"
+        >
           <div className="flex items-center gap-1">
             <FiCalendar className="w-4 h-4" />
             <span>{formatDate(post.publishedAt)}</span>
@@ -226,7 +247,7 @@ const Blog = () => {
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-[#004f38] rounded-full flex items-center justify-center">
               <span className="text-white text-sm font-bold">
-                {post.author.split(' ')[0].charAt(0)}
+                {post.author.split(" ")[0].charAt(0)}
               </span>
             </div>
             <span className="text-sm text-gray-600 font-medium">
@@ -249,7 +270,11 @@ const Blog = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 blog-container" dir="rtl" style={{ fontFamily: '"Emad-Arabic", sans-serif' }}>
+    <div
+      className="min-h-screen bg-gray-50 blog-container"
+      dir="rtl"
+      style={{ fontFamily: '"Emad-Arabic", sans-serif' }}
+    >
       <SEO
         title="مدونة مساحة تطوير"
         description="رؤى حول التطوير الذاتي والقيادة والنمو الشخصي"
@@ -277,7 +302,9 @@ const Blog = () => {
             dir="ltr"
           >
             <FiArrowLeft className="w-4 h-4" />
-            <span className="text-sm font-medium hidden sm:block">العودة للصفحة الرئيسية</span>
+            <span className="text-sm font-medium hidden sm:block">
+              العودة للصفحة الرئيسية
+            </span>
             <FiHome className="w-4 h-4 sm:hidden" />
           </motion.button>
 
@@ -352,8 +379,8 @@ const Blog = () => {
                   onClick={() => setSelectedCategory(category.key)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                     selectedCategory === category.key
-                      ? 'bg-[#004f38] text-white'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      ? "bg-[#004f38] text-white"
+                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
                   {category.label}
@@ -392,12 +419,16 @@ const Blog = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-3xl font-bold text-center mb-10"
             >
-              {selectedCategory === 'all' ? 'جميع المقالات' : categories.find(cat => cat.key === selectedCategory)?.label}
+              {selectedCategory === "all"
+                ? "جميع المقالات"
+                : categories.find((cat) => cat.key === selectedCategory)?.label}
             </motion.h2>
 
             {filteredPosts.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">لم يتم العثور على مقالات. جرب تعديل البحث.</p>
+                <p className="text-gray-500 text-lg">
+                  لم يتم العثور على مقالات. جرب تعديل البحث.
+                </p>
               </div>
             ) : (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
