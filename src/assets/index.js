@@ -1,5 +1,3 @@
-
-
 import logoName from "./logoName.png";
 import BrickmanLogo from "./BrickmanLogo.png";
 import BottomLeft from "./BottomLeft.png";
@@ -26,10 +24,10 @@ import TransformAcademy from "./TransformationAcademy.png";
 import PaperLeft from "./PaperLeft.png";
 import PaperRight from "./PaperRight.png";
 import CompanyLogo from "./Company.png";
-import Red from "./Red.png"
-import Blue from "./Blue.png"
-import Green from "./Green.png"
-import Yellow from "./Yellow.png"
+import Red from "./Red.png";
+import Blue from "./Blue.png";
+import Green from "./Green.png";
+import Yellow from "./Yellow.png";
 import Tap from "./tap.png";
 
 // Images for Interview Section
@@ -45,7 +43,6 @@ import ActionableData from "./ActionableData.png";
 import BetterInsight from "./BetterInsight.png";
 import EmotionalIntellegent from "./EmotionalIntellegent.png";
 
-
 // Images for Birkman Uses Section Icons
 import LeadershipDevelopment from "./Leadership_Development.png";
 import TeamBuilding from "./Team_Building.png";
@@ -60,7 +57,6 @@ import StressManagement from "./Stress_Management.png";
 import SalesTraining from "./Sales_Training.png";
 import ChangeManagement from "./Change_Management.png";
 
-
 //Images for Focused Birkman Section
 import CareerFields from "./Career_Fields.png";
 import Hobbies from "./Hobbies.png";
@@ -69,87 +65,84 @@ import People from "./people.png";
 import StressManagmentBehvior from "./StressManagementBehavior.png";
 import LearningStyle from "./Learning_Style.png";
 import TimeManagement from "./Time_Management.png";
-import WorkEnvironment from "./Work_Environment.png";  
-import CausesofStress from "./Causes_of_Stress.png";      
+import WorkEnvironment from "./Work_Environment.png";
+import CausesofStress from "./Causes_of_Stress.png";
 import Interests from "./Interests.png";
 
 // Birkman Map Images
 import BirkmanRed from "./Birkman_Map1_Top_Left.png";
-import BirkmanGreen from "./Birkman_Map2_Top_Right.png";
+import BirkmanGreen from "./Birkman_Map2_Top_right.png";
 import BirkmanYellow from "./Birkman_Map3_Bottom_Left.png";
 import BirkmanBlue from "./Birkman_Map4_Bottom_Right.png";
-
 
 // Fonts
 
 import ArabicFont from "./fonts/Emad-DianaeXtra-Regular.otf";
 import EnglishFont from "./fonts/Acumin Variable Concept.ttf";
 
-
-
 export {
-    logoName,
-    BrickmanLogo,
-    BottomLeft,
-    TopRight,
-    Icon1,
-    Icon2,
-    Icon3,
-    Icon4,
-    Cerif,
-    HattanLogo,
-    GreenSix,
-    HattanBirkman,
-    SixSegmaGreen,
-    SalesStrategy,
-    MangCoach,
-    ProjectManagement,
-    SixSegma,
-    TransformAcademy,
-    PaperLeft,
-    PaperRight,
-    CompanyLogo,
-    Red,
-    Blue,
-    Green,
-    Yellow, 
-    meeting,
-    Chair1,
-    Chair2,
-    Chair3, 
-    Vailid,
-    ActionableData,
-    BetterInsight,
-    EmotionalIntellegent,
-    LeadershipDevelopment,
-    TeamBuilding,
-    CareerPlanning,
-    HiringRecruitment,
-    Conflict_Resolution,    
-    Communication_Skills,
-    PerformanceManagement,
-    OrganizationalCulture,
-    CoachingMentoring,
-    StressManagement,
-    SalesTraining,
-    ChangeManagement,
-    SelfAwareness,
-    CareerFields,
-    Hobbies,    
-    Strengths,
-    People,
-    StressManagmentBehvior,
-    LearningStyle,
-    TimeManagement,
-    WorkEnvironment,
-    CausesofStress,
-    Interests,
-    BirkmanRed,
-    BirkmanGreen,
-    BirkmanYellow,
-    BirkmanBlue, 
-    Tap,
-    HattanLogoWhite,
-    ArabicFont,
-    EnglishFont
+  logoName,
+  BrickmanLogo,
+  BottomLeft,
+  TopRight,
+  Icon1,
+  Icon2,
+  Icon3,
+  Icon4,
+  Cerif,
+  HattanLogo,
+  GreenSix,
+  HattanBirkman,
+  SixSegmaGreen,
+  SalesStrategy,
+  MangCoach,
+  ProjectManagement,
+  SixSegma,
+  TransformAcademy,
+  PaperLeft,
+  PaperRight,
+  CompanyLogo,
+  Red,
+  Blue,
+  Green,
+  Yellow,
+  meeting,
+  Chair1,
+  Chair2,
+  Chair3,
+  Vailid,
+  ActionableData,
+  BetterInsight,
+  EmotionalIntellegent,
+  LeadershipDevelopment,
+  TeamBuilding,
+  CareerPlanning,
+  HiringRecruitment,
+  Conflict_Resolution,
+  Communication_Skills,
+  PerformanceManagement,
+  OrganizationalCulture,
+  CoachingMentoring,
+  StressManagement,
+  SalesTraining,
+  ChangeManagement,
+  SelfAwareness,
+  CareerFields,
+  Hobbies,
+  Strengths,
+  People,
+  StressManagmentBehvior,
+  LearningStyle,
+  TimeManagement,
+  WorkEnvironment,
+  CausesofStress,
+  Interests,
+  BirkmanRed,
+  BirkmanGreen,
+  BirkmanYellow,
+  BirkmanBlue,
+  Tap,
+  HattanLogoWhite,
+  ArabicFont,
+  EnglishFont,
 };
