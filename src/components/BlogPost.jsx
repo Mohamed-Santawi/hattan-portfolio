@@ -113,8 +113,7 @@ const BlogPost = () => {
       category: "lifeSkills",
       published: true,
       featured: false,
-      image:
-        "https://hattan-portfolio.vercel.app/og-image.png",
+      image: "https://hattan-portfolio.vercel.app/og-image.png",
       author: "هتان عارف",
       publishedAt: "2024-01-05T10:00:00Z",
       updatedAt: "2024-01-05T10:00:00Z",
@@ -143,11 +142,13 @@ const BlogPost = () => {
       post.image.trim() === "" ||
       post.image === "/api/placeholder/600/400"
     ) {
+      console.log("No image found for post:", post?.title);
       return null;
     }
 
     // If it's already a full URL, return it
     if (post.image.startsWith("http://") || post.image.startsWith("https://")) {
+      console.log("Using full URL image:", post.image);
       return post.image;
     }
 
@@ -155,7 +156,7 @@ const BlogPost = () => {
     const baseUrl =
       typeof window !== "undefined"
         ? window.location.origin
-        : "https://hattanarif.com";
+        : "https://hattan-portfolio.vercel.app";
 
     // Clean the image path
     let cleanImage = post.image;
@@ -166,7 +167,9 @@ const BlogPost = () => {
     // Remove any double slashes except for protocol
     cleanImage = cleanImage.replace(/\/+/g, "/");
 
-    return `${baseUrl}${cleanImage}`;
+    const finalUrl = `${baseUrl}${cleanImage}`;
+    console.log("Generated image URL:", finalUrl);
+    return finalUrl;
   };
 
   // Helper function to get description
@@ -196,7 +199,7 @@ const BlogPost = () => {
     const currentUrl =
       typeof window !== "undefined"
         ? window.location.href
-        : `https://hattanarif.com/blog/${id}`;
+        : `https://hattan-portfolio.vercel.app/blog/${id}`;
 
     return (
       <Helmet>
@@ -224,11 +227,15 @@ const BlogPost = () => {
         {/* Open Graph Image - Use blog post image or fallback to logo */}
         <meta
           property="og:image"
-          content={imageUrl || "https://hattanarif.com/og-image.png"}
+          content={
+            imageUrl || "https://hattan-portfolio.vercel.app/og-image.png"
+          }
         />
         <meta
           property="og:image:secure_url"
-          content={imageUrl || "https://hattanarif.com/og-image.png"}
+          content={
+            imageUrl || "https://hattan-portfolio.vercel.app/og-image.png"
+          }
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -241,7 +248,9 @@ const BlogPost = () => {
         <meta name="twitter:description" content={description} />
         <meta
           name="twitter:image"
-          content={imageUrl || "https://hattanarif.com/og-image.png"}
+          content={
+            imageUrl || "https://hattan-portfolio.vercel.app/og-image.png"
+          }
         />
         <meta name="twitter:url" content={currentUrl} />
 
@@ -266,7 +275,8 @@ const BlogPost = () => {
             "@type": "BlogPosting",
             headline: post.title,
             description: description,
-            image: imageUrl || "https://hattanarif.com/og-image.png",
+            image:
+              imageUrl || "https://hattan-portfolio.vercel.app/og-image.png",
             url: currentUrl,
             datePublished: post.publishedAt,
             dateModified: post.updatedAt || post.publishedAt,
@@ -279,7 +289,7 @@ const BlogPost = () => {
               name: "هتان عارف",
               logo: {
                 "@type": "ImageObject",
-                url: "https://hattanarif.com/favicon.ico",
+                url: "https://hattan-portfolio.vercel.app/favicon.ico",
               },
             },
             mainEntityOfPage: {
