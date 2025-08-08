@@ -192,7 +192,35 @@ const BlogPost = () => {
 
   // SEO Component - This will be prerendered by react-snap
   const renderSEO = () => {
-    if (!post) return null;
+    // Always render SEO, even if post is not loaded yet
+    // This ensures meta tags are available for social media crawlers
+    if (!post) {
+      console.log("No post loaded yet, using default SEO");
+      return (
+        <Helmet>
+          <title>مقال من مدونة هتان عارف | هتان عارف</title>
+          <meta name="description" content="مقال من مدونة هتان عارف" />
+          <meta property="og:title" content="مقال من مدونة هتان عارف" />
+          <meta property="og:description" content="مقال من مدونة هتان عارف" />
+          <meta
+            property="og:image"
+            content="https://hattan-portfolio.vercel.app/og-image.png"
+          />
+          <meta
+            property="og:url"
+            content={`https://hattan-portfolio.vercel.app/blog/${id}`}
+          />
+          <meta property="og:type" content="article" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="مقال من مدونة هتان عارف" />
+          <meta name="twitter:description" content="مقال من مدونة هتان عارف" />
+          <meta
+            name="twitter:image"
+            content="https://hattan-portfolio.vercel.app/og-image.png"
+          />
+        </Helmet>
+      );
+    }
 
     const imageUrl = getImageUrl();
     const description = getDescription();
@@ -200,6 +228,11 @@ const BlogPost = () => {
       typeof window !== "undefined"
         ? window.location.href
         : `https://hattan-portfolio.vercel.app/blog/${id}`;
+
+    console.log("SEO Debug - Post:", post.title);
+    console.log("SEO Debug - Image URL:", imageUrl);
+    console.log("SEO Debug - Description:", description);
+    console.log("SEO Debug - Current URL:", currentUrl);
 
     return (
       <Helmet>
@@ -387,11 +420,11 @@ const BlogPost = () => {
             <strong>Image URL:</strong> {getImageUrl() || "No image"}
           </p>
           <p>
-            <strong>Fallback Image:</strong> https://hattanarif.com/og-image.png
+            <strong>Fallback Image:</strong> https://hattan-portfolio.vercel.app/og-image.png
           </p>
           <p>
             <strong>Final Image:</strong>{" "}
-            {getImageUrl() || "https://hattanarif.com/og-image.png"}
+            {getImageUrl() || "https://hattan-portfolio.vercel.app/og-image.png"}
           </p>
           <p>
             <strong>Description:</strong> {getDescription().substring(0, 50)}...
