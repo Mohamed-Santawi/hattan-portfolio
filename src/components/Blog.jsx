@@ -94,8 +94,7 @@ const Blog = () => {
       category: "selfAwareness",
       published: true,
       featured: true,
-      image:
-        "https://hattan-portfolio.vercel.app/assets/Self_Awareness-KyA2IAyk.png",
+      image: "https://hattan-portfolio.vercel.app/og-image.png",
       author: "هتان عارف",
       publishedAt: "2024-01-15T10:00:00Z",
       updatedAt: "2024-01-15T10:00:00Z",
@@ -112,7 +111,7 @@ const Blog = () => {
       published: true,
       featured: false,
       image:
-        "https://hattan-portfolio.vercel.app/assets/EmotionalIntellegent-PKwXjggm.png",
+        "https://hattan-portfolio.vercel.app/og-birkman.png",
       author: "هتان عارف",
       publishedAt: "2024-01-10T10:00:00Z",
       updatedAt: "2024-01-10T10:00:00Z",
@@ -129,7 +128,7 @@ const Blog = () => {
       published: true,
       featured: false,
       image:
-        "https://hattan-portfolio.vercel.app/assets/Leadership_Development-Bp44VmMw.png",
+        "https://hattan-portfolio.vercel.app/og-image.png",
       author: "هتان عارف",
       publishedAt: "2024-01-05T10:00:00Z",
       updatedAt: "2024-01-05T10:00:00Z",
