@@ -1,0 +1,7 @@
+# Netlify redirects (fallback if hosted on Netlify instead)
+/*    /index.html   200
+
+# Handle case-sensitive URLs
+/Services/*  /services/:splat  301
+/Blog/*      /blog/:splat      301
+/Admin/*     /admin/:splat     301

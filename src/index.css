@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import custom fonts */
+@font-face {
+  font-family: 'Emad-Arabic';
+  src: url('./assets/fonts/Emad-DianaeXtra-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acumin-English';
+  src: url('./assets/fonts/Acumin Variable Concept.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Acumin-English", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Arabic text styling - applies custom Arabic font */
+[dir="rtl"] *,
+[dir="rtl"] p,
+[dir="rtl"] span,
+[dir="rtl"] div,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] button,
+[dir="rtl"] label,
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+.font-arabic {
+  font-family: "Emad-Arabic", sans-serif !important;
+}
+
+/* English text styling - applies custom English font */
+[dir="ltr"] *,
+[dir="ltr"] p,
+[dir="ltr"] span,
+[dir="ltr"] div,
+[dir="ltr"] h1,
+[dir="ltr"] h2,
+[dir="ltr"] h3,
+[dir="ltr"] h4,
+[dir="ltr"] h5,
+[dir="ltr"] h6,
+[dir="ltr"] button,
+[dir="ltr"] label,
+[dir="ltr"] input,
+[dir="ltr"] textarea,
+.font-english {
+  font-family: "Acumin-English", sans-serif !important;
+}
+
+/* Utility classes for manual application */
+.font-arabic {
+  font-family: "Emad-Arabic", sans-serif !important;
+}
+
+.font-english {
+  font-family: "Acumin-English", sans-serif !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
